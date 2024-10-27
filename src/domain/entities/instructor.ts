@@ -10,4 +10,8 @@ export class Instructor extends Entity<InstructorProps> {
 
     return instructor
   }
+
+  get name() {
+    return this.props.name
+  }
 }

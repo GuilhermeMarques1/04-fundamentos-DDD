@@ -22,4 +22,55 @@ export class Question extends Entity<QuestionProps> {
 
     return question
   }
+
+  get authorId() {
+    return this.props.authorId
+  }
+
+  get bestAnswerId() {
+    return this.props.bestAnswerId
+  }
+
+  get title() {
+    return this.props.title
+  }
+
+  get slug() {
+    return this.props.slug
+  }
+
+  get content() {
+    return this.props.content
+  }
+
+  get createdAt() {
+    return this.props.createdAt
+  }
+
+  get updatedAt() {
+    return this.props.updatedAt
+  }
+
+  private update() {
+    this.props.updatedAt = new Date()
+  }
+
+  set title(title: string) {
+    this.props.title = title
+    this.props.slug = new Slug(title)
+    
+    this.update()
+  }
+
+  set content(content: string) {
+    this.props.content = content
+
+    this.update()
+  }
+
+  set bestAnswerId(bestAnswerId: UniqueEntityId | undefined) {
+    this.props.bestAnswerId = bestAnswerId
+
+    this.update()
+  }
 }
