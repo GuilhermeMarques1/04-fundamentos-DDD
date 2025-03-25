@@ -17,5 +17,8 @@
     "typescript": "^5.5.4",
     "vitest": "^2.0.5",
     "vitest-tsconfig-paths": "^3.4.1"
+  },
+  "dependencies": {
+    "04-fundamentos-ddd": "file:"
   }
 }
